@@ -2,8 +2,21 @@
 #include <stdio.h>
 
 void* swapDouble(double* pa, double* pb); // 전방선언
+void print_array_double(double arr[], int sz);
+void printArrayDouble(double* arr, int sz);
+int test_printf_array();
+int test_swapDouble();
+
 
 int main()
+{
+	/*test_swapDouble();*/
+	test_printf_array();
+
+	return 0;
+}
+
+int test_swapDouble()
 {
 	double a = 3.14;
 	double b = 5.12;
@@ -11,19 +24,20 @@ int main()
 	double* presult1 = (double*)swapDouble(&a, &b);
 	if (presult1 == NULL)
 	{
-		printf("1뭔가 잘못되었!!");
+		printf("1뭔가 잘못되었!!\n");
 	}
+	
 	else
 	{
 		printf("a = %f, b= %f\n", a, b);
 	}
-
-	double* presult2 = (double*)swapDouble((double*) NULL, & b);
+	printf("\n");
+	double* presult2 = (double*)swapDouble((double*)NULL, &b);
 	if (presult2 == NULL)
 	{
 		printf("2뭔가 잘못되었!!");
 	}
-	
+	printf("\n");
 
 }
 
@@ -42,3 +56,57 @@ void* swapDouble(double* pa, double* pb)
 
 	return pa;
 }
+
+int test_print_array()
+{
+	double da[] = { 1.0, 2.0, 3.0, 4.0, 5.0 };
+
+	return 0;
+}
+
+// 기능: 1차원 실수 배열을 출력한다
+// 함수명: print_arrat_double
+// 입력 : double 타입 1차원 배열 주소
+// 출력: 터미널에 배열의 내용을 예쁘게 출력
+// 반환 : 없음
+
+void print_array_double(double arr[], int sz)
+{
+	for (int i = 0; i < sz; i++)
+	{
+		printf("%lf\n", arr[i]);
+	}
+	printf("\n");
+
+}
+
+void printArrayDouble(double* arr, int sz)
+{
+	for (int i = 0; i < sz; i++)
+	{
+		printf("%lf\n", *arr);
+	}
+	printf("\n");
+	
+}
+
+int test_printf_array()
+{
+	double da[] = { 1.0, 2.0,3.0,4.0,5.0 };
+
+	int size = sizeof(da) / sizeof(da[0]);
+
+	print_array_double(da, size);
+	printArrayDouble(&da[0], size);
+
+	return 0;
+
+}
+
+
+
+
+
+
+
+
