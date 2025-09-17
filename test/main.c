@@ -9,7 +9,7 @@ int test_swapDouble();
 double add(double a, double b);
 double sub(double a, double b);
 double mul(double a, double b);
-test_function_pointer();
+int test_function_pointer();
 
 
 int main()
