@@ -25,4 +25,11 @@ void* swapDouble(double* pa, double* pb)
 	{
 		return NULL;
 	}
+
+	//2. swap two values
+	double tmp = *pa;
+	*pb = *pb;
+	*pb = tmp;
+
+	return pa;
 }
