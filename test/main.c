@@ -51,7 +51,7 @@ void* swapDouble(double* pa, double* pb)
 
 	//2. swap two values
 	double tmp = *pa;
-	*pb = *pb;
+	*pa = *pb;
 	*pb = tmp;
 
 	return pa;
@@ -84,7 +84,7 @@ void printArrayDouble(double* arr, int sz)
 {
 	for (int i = 0; i < sz; i++)
 	{
-		printf("%lf\n", *arr);
+		printf("%lf\n", arr[i]);
 	}
 	printf("\n");
 	
