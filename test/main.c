@@ -1,21 +1,30 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-void* swapDouble(double* pa, double* pb);
+void* swapDouble(double* pa, double* pb); // 전방선언
 
 int main()
 {
 	double a = 3.14;
 	double b = 5.12;
 
-	double* presult = (double*)swapDouble(&a, &b);
-	if (presult == NULL)
+	double* presult1 = (double*)swapDouble(&a, &b);
+	if (presult1 == NULL)
 	{
-		printf("뭔가 잘못되었!!");
+		printf("1뭔가 잘못되었!!");
+	}
+	else
+	{
+		printf("a = %f, b= %f\n", a, b);
 	}
 
-	printf("Hello, World!\n");
-	return;
+	double* presult2 = (double*)swapDouble((double*) NULL, & b);
+	if (presult2 == NULL)
+	{
+		printf("2뭔가 잘못되었!!");
+	}
+	
+
 }
 
 void* swapDouble(double* pa, double* pb)
